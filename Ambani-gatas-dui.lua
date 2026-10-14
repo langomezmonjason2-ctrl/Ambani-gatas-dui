@@ -2882,7 +2882,7 @@ end
                 Menu.ItemScrollOffset = 0
             end
         end
-    end
+    
 
 
 CreateThread(function()
