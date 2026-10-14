@@ -2883,7 +2883,6 @@ end
             end
         end
     end
-end
 
 
 CreateThread(function()
