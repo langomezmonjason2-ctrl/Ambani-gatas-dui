@@ -2530,7 +2530,7 @@ end
         end
         return
     end
-
+     
     if Menu.OpenedCategory then
         local category = Menu.Categories[Menu.OpenedCategory]
         if not category or not category.hasTabs or not category.tabs then
