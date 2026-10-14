@@ -31,16 +31,7 @@ end
 -- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 -- ============================================================================
 
--- No-op placeholder (para sa mga tinanggal na Susano functions)
-local _AMBA_NOOP = function(...) return end
 
--- Notification fallback (native FiveM feed)
-local _AMBA_NOTIFY = function(msg)
-    if not msg then return end
-    BeginTextCommandThefeedPost("STRING")
-    AddTextComponentSubstringPlayerName(tostring(msg))
-    EndTextCommandThefeedPostTicker(false, true)
-end
 
 -- ============================================================================
 -- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -131,7 +122,7 @@ Menu.bannerHeight = 0
 
 function Menu.LoadBannerTexture(url)
     if not url or url == "" then return end
-    if not ( ambani.GetAsyncKeyState) then
+    if not ambani.HttpGet or not ambani.Draw.LoadTextureFromBuffer then return end
 
     if CreateThread then
         CreateThread(function()
